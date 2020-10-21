@@ -179,43 +179,43 @@ public class Attachment {
         this.footer_icon = footer_icon;
         this.ts = ts;
     }
+
+
+    class fields {
+        String title;
+        String value;
+        boolean isShort;
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public boolean isShort() {
+            return isShort;
+        }
+
+        public void setShort(boolean aShort) {
+            isShort = aShort;
+        }
+
+        public fields(String title, String value, boolean isShort) {
+            this.title = title;
+            this.value = value;
+            this.isShort = isShort;
+        }
+
+    }
 }
-
-class fields {
-    String title;
-    String value;
-    boolean isShort;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public boolean isShort() {
-        return isShort;
-    }
-
-    public void setShort(boolean aShort) {
-        isShort = aShort;
-    }
-
-    public fields(String title, String value, boolean isShort) {
-        this.title = title;
-        this.value = value;
-        this.isShort = isShort;
-    }
-
-}
-
 
