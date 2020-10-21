@@ -9,35 +9,35 @@ import de.ralleytn.simple.json.JSONObject;
 
 public class Attachment {
 
-    private String fallback = "fallback";
+    private String fallback;
 
-    private String color = "color";
+    private String color;
 
-    private String preText = "preText";
+    private String preText;
 
-    private String author_name = "author_name";
+    private String author_name;
 
-    private String author_link = "author_link";
+    private String author_link;
 
-    private String author_icon = "author_icon";
+    private String author_icon;
 
-    private String title = "title";
+    private String title;
 
-    private String title_link = "title_link";
+    private String title_link;
 
-    private String text = "text";
+    private String text;
 
-    private String fields = "fields";
+    private String fields;
 
-    private String image_url = "image_url";
+    private String image_url;
 
-    private String thumb_url = "thumb_url";
+    private String thumb_url;
 
-    private String footer = "footer";
+    private String footer;
 
-    private String footer_icon = "footer_icon";
+    private String footer_icon;
 
-    private String ts = "ts";
+    private String ts;
 
     public Attachment(JSONObject jsonObject) {
     }
