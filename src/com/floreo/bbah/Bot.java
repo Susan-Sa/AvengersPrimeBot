@@ -10,6 +10,9 @@ import java.util.List;
 public class Bot {
 
     // TODO: implement your bot logic!
+    public void run(){
+        System.out.println("Hello World");
+    }
 
     public Bot() {
 
