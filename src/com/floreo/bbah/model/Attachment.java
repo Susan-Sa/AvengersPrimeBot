@@ -241,6 +241,7 @@ public class Attachment {
             }
         }
 
+
         public String getTitle() {
             return title;
         }
@@ -271,8 +272,8 @@ public class Attachment {
             this.isShort = isShort;
         }
 
-
     }
-
-
 }
+
+
+    
