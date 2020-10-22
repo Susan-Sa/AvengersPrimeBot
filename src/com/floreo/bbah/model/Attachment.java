@@ -2,8 +2,6 @@ package com.floreo.bbah.model;
 
 import de.ralleytn.simple.json.JSONObject;
 
-import java.lang.reflect.Field;
-
 /**
  * A class representing a message attachment.
  * See https://api.slack.com/docs/message-attachments
@@ -164,7 +162,9 @@ public class Attachment {
         return fields;
     }
 
-    public void setFields(Field fields) { this.fields = fields; }
+    public void setFields(Field fields) {
+        this.fields = fields;
+    }
 
     public String getImage_url() {
         return image_url;
@@ -228,6 +228,18 @@ public class Attachment {
         String title;
         String value;
         boolean isShort;
+
+        public Field(JSONObject json) {
+            if (json.get("title") != null) {
+                this.title = (String) json.get("title");
+            }
+            if (json.get("value") != null) {
+                this.value = (String) json.get("value");
+            }
+            if (json.get("short") != null) {
+                this.isShort = (boolean) json.get("short");
+            }
+        }
 
         public String getTitle() {
             return title;

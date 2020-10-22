@@ -2,8 +2,6 @@ package com.floreo.bbah.model;
 
 import de.ralleytn.simple.json.JSONObject;
 
-import java.util.List;
-
 public class Powerstats {
 
     private String response;
