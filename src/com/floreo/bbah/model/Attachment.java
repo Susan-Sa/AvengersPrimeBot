@@ -27,7 +27,7 @@ public class Attachment {
 
     private String text;
 
-    private String fields;
+    private Field fields;
 
     private String image_url;
 
@@ -37,9 +37,53 @@ public class Attachment {
 
     private String footer_icon;
 
-    private String ts;
+    private int ts;
 
-    public Attachment(JSONObject jsonObject) {
+    public Attachment(JSONObject json) {
+
+        if (json.get("fallback") != null) {
+            this.fallback = (String) json.get("fallback");
+        }
+        if (json.get("color") != null) {
+            this.color = (String) json.get("color");
+        }
+        if (json.get("author_name") != null) {
+            this.author_name = (String) json.get("author_name");
+        }
+        if (json.get("author_link") != null) {
+            this.author_link = (String) json.get("author_link");
+        }
+        if (json.get("author_icon") != null) {
+            this.author_icon = (String) json.get("author_icon");
+        }
+        if (json.get("title") != null) {
+            this.title = (String) json.get("title");
+        }
+        if (json.get("title_link") != null) {
+            this.title_link = (String) json.get("title_link");
+        }
+        if (json.get("text") != null) {
+            this.text = (String) json.get("text");
+        }
+        if (json.get("fields") != null) {
+            this.fields = (Field) json.get("fields");
+        }
+        if (json.get("image_url") != null) {
+            this.image_url = (String) json.get("image_url");
+        }
+        if (json.get("thumb_url") != null) {
+            this.thumb_url = (String) json.get("thumb_url");
+        }
+        if (json.get("footer") != null) {
+            this.footer = (String) json.get("footer");
+        }
+        if (json.get("footer_icon") != null) {
+            this.footer_icon = (String) json.get("footer_icon");
+        }
+        if (json.get("ts") != null) {
+            this.ts = (int) json.get("ts");
+        }
+
     }
 
     public String getFallback() {
@@ -114,11 +158,11 @@ public class Attachment {
         this.text = text;
     }
 
-    public String getFields() {
+    public Field getFields() {
         return fields;
     }
 
-    public void setFields(String fields) {
+    public void setFields(Field fields) {
         this.fields = fields;
     }
 
@@ -154,15 +198,15 @@ public class Attachment {
         this.footer_icon = footer_icon;
     }
 
-    public String getTs() {
+    public int getTs() {
         return ts;
     }
 
-    public void setTs(String ts) {
+    public void setTs(int ts) {
         this.ts = ts;
     }
 
-    public Attachment(String fallback, String color, String preText, String author_name, String author_link, String author_icon, String title, String title_link, String text, String fields, String image_url, String thumb_url, String footer, String footer_icon, String ts) {
+    public Attachment(String fallback, String color, String preText, String author_name, String author_link, String author_icon, String title, String title_link, String text, Field fields, String image_url, String thumb_url, String footer, String footer_icon, int ts) {
         this.fallback = fallback;
         this.color = color;
         this.preText = preText;
@@ -180,11 +224,23 @@ public class Attachment {
         this.ts = ts;
     }
 
-
-    class fields {
+    class Field {
         String title;
         String value;
         boolean isShort;
+
+        public Field(JSONObject json) {
+            if (json.get("title") != null) {
+                this.title = (String) json.get("title");
+            }
+            if (json.get("value") != null) {
+                this.value = (String) json.get("value");
+            }
+            if (json.get("short") != null) {
+                this.isShort = (boolean) json.get("short");
+            }
+        }
+
 
         public String getTitle() {
             return title;
@@ -210,7 +266,7 @@ public class Attachment {
             isShort = aShort;
         }
 
-        public fields(String title, String value, boolean isShort) {
+        public Field(String title, String value, boolean isShort) {
             this.title = title;
             this.value = value;
             this.isShort = isShort;
@@ -219,3 +275,5 @@ public class Attachment {
     }
 }
 
+
+    
