@@ -10,7 +10,7 @@ import de.ralleytn.simple.json.JSONObject;
  */
 
 public class User {
-    private Object profile = new Object();
+
 
     private String id;
     private String name;
@@ -99,4 +99,38 @@ public class User {
     public String getTwoFactorType() { return two_factor_type; }
 
     public boolean getHas_files() { return has_files; }
+
+    public class Profile{
+        private String first_name;
+        private String last_name;
+
+    public Profile(JSONObject json) {
+        if(json.get("first_name") != null){
+            this.first_name = (String) json.get("first_name");
+        }
+        if(json.get("last_name") != null){
+            this.last_name = (String) json.get("last_name");
+        }
+    }
+
+    public Profile(String first_name, String last_name){
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
+
+        public String getFirst_name() { return first_name; }
+
+        public void setFirst_name(String first_name) {
+            this.first_name = first_name;
+        }
+
+        public String getLast_name() { return last_name; }
+
+        public void setLast_name(String last_name) {
+            this.last_name = last_name;
+    }
+
+
+    }
+
 }
