@@ -12,21 +12,18 @@ import java.util.HashMap;
 
 public class PowerstatsResponse extends Response {
 
-    Powerstats info  = new Powerstats(JSONObject json);
+    Powerstats response;
 
     public PowerstatsResponse(JSONObject json) {
+
         super(json);
 
-        HashMap<String, Object> stats = new HashMap<>();
+        response = new Powerstats(json);
 
-        //if (json.containsKey("messages")) {
-            JSONArray array = (JSONArray) json;
+    }
 
-            //this.messages = new ArrayList<Message>();
-            for (int i = 0; i < array.size(); i++) {
-                //this.messages.add(new Message((JSONObject) array.get(i)));
-            }
-        //}
+    public Powerstats sendPowerstats(JSONObject json) {
+        return response;
     }
 
 }
