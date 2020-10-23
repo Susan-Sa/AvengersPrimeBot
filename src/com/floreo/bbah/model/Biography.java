@@ -119,4 +119,15 @@ public class Biography {
     public void setAlignment(String alignment) {
         this.alignment = alignment;
     }
+
+    public String toString() {
+        return "Full Name: " + full_name +
+                "\nAlter Egos: " + alter_egos +
+                "\nAliases: " + aliases +
+                "\nPlace of Birth: " + place_of_birth +
+                "\nFirst Appearance: " + first_appearance +
+                "\nPublisher: " + publisher +
+                "\nAlignment: " + alignment;
+
+    }
 }
