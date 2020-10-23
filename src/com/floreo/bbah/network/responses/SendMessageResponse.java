@@ -6,7 +6,6 @@ import de.ralleytn.simple.json.JSONObject;
 /**
  * A class representing the response from chat.postMessage
  * See https://api.slack.com/methods/chat.postMessage
- *
  */
 public class SendMessageResponse extends Response {
 

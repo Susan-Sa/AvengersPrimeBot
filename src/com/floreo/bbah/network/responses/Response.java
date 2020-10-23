@@ -5,7 +5,6 @@ import de.ralleytn.simple.json.JSONObject;
 /**
  * A class representing a response from Slack's Web API.
  * See https://api.slack.com/methods/api.test
- *
  */
 
 public class Response {

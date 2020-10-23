@@ -2,6 +2,8 @@ package com.floreo.bbah;
 
 import com.floreo.bbah.model.Channel;
 import com.floreo.bbah.model.Message;
+import com.floreo.bbah.model.Powerstats;
+import com.floreo.bbah.network.Hero;
 import com.floreo.bbah.network.Slack;
 import com.floreo.bbah.network.responses.*;
 
@@ -10,6 +12,9 @@ import java.util.List;
 public class Bot {
 
     // TODO: implement your bot logic!
+    public void run() {
+        System.out.println("Hello World");
+    }
 
     public Bot() {
 
@@ -20,7 +25,7 @@ public class Bot {
      */
     public void testApi() {
         Response apiTest = Slack.testApi();
-        System.out.println("API OK: " +apiTest.isOk() + "\n");
+        System.out.println("API OK: " + apiTest.isOk() + "\n");
     }
 
     /**
@@ -77,6 +82,30 @@ public class Bot {
         } else {
             System.err.print("Error sending message: " + sendMessageResponse.getError());
         }
+    }
+
+    //populates sendMessage JSON with .sendMessage, and fulfills String text with Powerstats JSON .toString response
+    public void sendStatsToBotsChannel() {
+        SendMessageResponse powerstatsResponse = Slack.sendMessage(Hero.getPowerstats());
+
+        if (powerstatsResponse.isOk()) {
+            System.out.println("Message sent successfully!");
+        } else {
+            System.err.print("Error sending message: " + powerstatsResponse.getError());
+        }
+
+    }
+
+    //populates sendMessage JSON with .sendMessage, and fulfills String text with Biography JSON .toString response
+    public void sendBioToBotsChannel() {
+        SendMessageResponse biographyResponse = Slack.sendMessage(Hero.getBiography());
+
+        if (biographyResponse.isOk()) {
+            System.out.println("Message sent successfully!");
+        } else {
+            System.err.print("Error sending message: " + biographyResponse.getError());
+        }
+
     }
 
     /**

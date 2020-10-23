@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * A class representing the response from channels.history
  * See https://api.slack.com/methods/channels.history
- *
  */
 
 public class ListMessagesResponse extends Response {
