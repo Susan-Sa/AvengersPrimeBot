@@ -15,7 +15,7 @@ public class Main {
 
         myBot.listMessages(Slack.BOTS_CHANNEL_ID);
 
-        myBot.sendMessageToBotsChannel("Heller!!");
+        myBot.sendMessageToBotsChannel("Heller!! https://www.pexels.com/photo/sunset-beach-water-ocean-59920/ Yeller!");
 
 
     }
