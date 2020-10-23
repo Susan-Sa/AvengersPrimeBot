@@ -46,27 +46,27 @@ public class Powerstats {
 
     }
 
-    public String setResponse() {
+    public String getResponse() {
         return response;
     }
 
-    public void getResponse(String response) {
+    public void setResponse(String response) {
         this.response = response;
     }
 
-    public String setId() {
+    public String getId() {
         return id;
     }
 
-    public void getId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String setName() {
+    public String getName() {
         return name;
     }
 
-    public void getName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -128,6 +128,17 @@ public class Powerstats {
         this.durability = durability;
         this.power = power;
         this.combat = combat;
+
+    }
+
+    public String toString(){
+        return  "Name: " + name +
+                "\nIntelligence: " + intelligence +
+                "\nStrength: " + strength +
+                "\nSpeed: " + speed +
+                "\nDurability: " + durability +
+                "\nPower: " + power +
+                "\nCombat: " + combat;
 
     }
 

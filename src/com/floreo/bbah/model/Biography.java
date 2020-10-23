@@ -119,4 +119,5 @@ public class Biography {
     public void setAlignment(String alignment) {
         this.alignment = alignment;
     }
+
 }

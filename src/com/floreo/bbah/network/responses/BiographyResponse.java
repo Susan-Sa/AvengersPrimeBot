@@ -13,14 +13,6 @@ public class BiographyResponse extends Response{
     public BiographyResponse(JSONObject json) {
         super(json);
 
-        if (json.containsKey("messages")) {
-            JSONArray array = (JSONArray) json.get("messages");
-
-            //this.messages = new ArrayList<Message>();
-            for (int i = 0; i < array.size(); i++) {
-                //this.messages.add(new Message((JSONObject) array.get(i)));
-            }
-        }
     }
 
 
