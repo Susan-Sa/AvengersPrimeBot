@@ -4,4 +4,5 @@ out/
 *.class
 *.iml
 *.iws
-api_token.txt
+api_slack_token.txt
+api_hero_token.txt

@@ -4,14 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Token {
-
+public class HeroToken {
 
     public static String findApiToken() {
 
         String apiKey = "";
 
-        File file = new File("api_slack_token.txt");
+        File file = new File("api_hero_token.txt");
         System.out.println(file.getAbsolutePath());
 
         try {
@@ -30,4 +29,5 @@ public class Token {
 
         return apiKey;
     }
+
 }
