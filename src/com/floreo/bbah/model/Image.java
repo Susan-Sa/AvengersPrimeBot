@@ -50,4 +50,8 @@ public class Image {
             this.url = url;
 
         }
+
+        public String toString(){
+        return "\n" + url;
+        }
     }

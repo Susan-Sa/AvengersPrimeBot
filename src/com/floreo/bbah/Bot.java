@@ -108,6 +108,28 @@ public class Bot {
 
     }
 
+    public void sendImageToBotsChannel() {
+        SendMessageResponse ImageResponse = Slack.sendMessage(Hero.getImage());
+
+        if (ImageResponse.isOk()) {
+            System.out.println("Message sent successfully!");
+        } else {
+            System.err.print("Error sending message: " + ImageResponse.getError());
+        }
+
+    }
+
+    public void sendHeroToBotsChannel() {
+        SendMessageResponse heroResponse = Slack.sendMessage(Hero.sendHeroResponse());
+
+        if (heroResponse.isOk()) {
+            System.out.println("Message sent successfully!");
+        } else {
+            System.err.print("Error sending message: " + heroResponse.getError());
+        }
+
+    }
+
     /**
      * Sample method: deletes a message from the #bots channel. Prints a message indicating success or failure.
      *

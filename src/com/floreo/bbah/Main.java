@@ -11,13 +11,16 @@ public class Main {
 
         myBot.testApi();
 
-        myBot.listChannels();
+        //myBot.listChannels();
 
-        myBot.listMessages(Slack.BOTS_CHANNEL_ID);
+        //myBot.listMessages(Slack.BOTS_CHANNEL_ID);
 
-        myBot.sendMessageToBotsChannel("Heller!! https://www.pexels.com/photo/sunset-beach-water-ocean-59920/ Yeller!");
-        myBot.sendStatsToBotsChannel();
-        myBot.sendBioToBotsChannel();
+        //myBot.sendMessageToBotsChannel("Heller!! https://www.pexels.com/photo/sunset-beach-water-ocean-59920/ Yeller!");
+        //myBot.sendStatsToBotsChannel();
+        //myBot.sendBioToBotsChannel();
+        //myBot.sendImageToBotsChannel();
+
+        myBot.sendHeroToBotsChannel();
 
 
     }

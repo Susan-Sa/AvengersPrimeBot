@@ -1,6 +1,7 @@
 package com.floreo.bbah.network;
 
 import com.floreo.bbah.model.Biography;
+import com.floreo.bbah.model.Image;
 import com.floreo.bbah.model.Powerstats;
 import com.floreo.bbah.network.responses.PowerstatsResponse;
 import com.floreo.bbah.network.responses.Response;
@@ -12,6 +13,7 @@ import de.ralleytn.simple.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Random;
 
 public class Hero {
 
@@ -29,9 +31,9 @@ public class Hero {
      * Wolverine 717*/
 
 
+
     private static final String API_KEY = HeroToken.findApiToken();
     private static final String BASE_URL = "https://superheroapi.com/api/";
-    private static final String CHARACTER_ID = "/480";
     private static final String ENDPOINT_POWERSTATS = "/powerstats";
     private static final String ENDPOINT_BIOGRAPHY = "/biography";
     private static final String ENDPOINT_APPEARANCE = "/appearance";
@@ -39,11 +41,18 @@ public class Hero {
     private static final String ENDPOINT_CONNECTIONS = "/connections";
     private static final String ENDPOINT_IMAGE = "/image";
     private static final String ENDPOINT_SEARCH_NAME = "/search/";
+    private static int CHARACTER_ID;
 
-    private int characterId;
+
 
     //This method accesses the superhero powerstats api and returns the object, which populates the PowerStats class
     //I then initalize a string, and give it a value of the custome toString of the Powerstats class
+
+    private static int characterId(){
+        Random random = new Random();
+        CHARACTER_ID = random.nextInt(734) + 1;
+        return CHARACTER_ID;
+    }
     public static String getPowerstats() {
 
         URL powerStatstUrl = HTTPS.stringToURL(BASE_URL + API_KEY + "/" + CHARACTER_ID + ENDPOINT_POWERSTATS);
@@ -61,6 +70,13 @@ public class Hero {
 
     //This method accesses the superhero biology api and returns the object, which populates the Biology class
     //I then initalize a string, and give it a value of the custom toString of the Biology class
+
+
+    public static int getCharacterId() {
+
+        return CHARACTER_ID;
+    }
+
     public static String getBiography() {
 
         URL biographyUrl = HTTPS.stringToURL(BASE_URL + API_KEY + "/" + CHARACTER_ID + ENDPOINT_BIOGRAPHY);
@@ -74,6 +90,29 @@ public class Hero {
         String biography = info.toString();
 
         return biography;
+    }
+
+    public static String getImage() {
+
+        URL imageUrl = HTTPS.stringToURL(BASE_URL + API_KEY + "/" + CHARACTER_ID + ENDPOINT_IMAGE);
+
+        JSONObject object = HTTPS.get(imageUrl);
+
+        Image info = new Image(object);
+
+        //String powerStats = "Here are your stats!!/nName: " + info.getName() +"/nIntelligence: " + info.getStrength() + : Speed: Durability: Power: Combat:"
+
+        String image = info.toString();
+
+        return image;
+    }
+
+    public static String sendHeroResponse(){
+        characterId();
+
+        String heroResponse = getPowerstats() + getBiography() + getImage();
+
+        return heroResponse;
     }
 
 

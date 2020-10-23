@@ -121,7 +121,7 @@ public class Biography {
     }
 
     public String toString() {
-        return "Full Name: " + full_name +
+        return "\nFull Name: " + full_name +
                 "\nName: " + name +
                 "\nAlter Egos: " + alter_egos +
                 "\nAliases: " + aliases +
