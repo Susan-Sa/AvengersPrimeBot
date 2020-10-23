@@ -12,7 +12,7 @@ import java.util.List;
 public class Bot {
 
     // TODO: implement your bot logic!
-    public void run(){
+    public void run() {
         System.out.println("Hello World");
     }
 
@@ -25,7 +25,7 @@ public class Bot {
      */
     public void testApi() {
         Response apiTest = Slack.testApi();
-        System.out.println("API OK: " +apiTest.isOk() + "\n");
+        System.out.println("API OK: " + apiTest.isOk() + "\n");
     }
 
     /**
@@ -85,7 +85,7 @@ public class Bot {
     }
 
     //populates sendMessage JSON with .sendMessage, and fulfills String text with Powerstats JSON .toString response
-    public void sendStatsToBotsChannel(){
+    public void sendStatsToBotsChannel() {
         SendMessageResponse powerstatsResponse = Slack.sendMessage(Hero.getPowerstats());
 
         if (powerstatsResponse.isOk()) {
@@ -97,7 +97,7 @@ public class Bot {
     }
 
     //populates sendMessage JSON with .sendMessage, and fulfills String text with Biography JSON .toString response
-    public void sendBioToBotsChannel(){
+    public void sendBioToBotsChannel() {
         SendMessageResponse biographyResponse = Slack.sendMessage(Hero.getBiography());
 
         if (biographyResponse.isOk()) {

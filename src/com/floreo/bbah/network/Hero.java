@@ -21,12 +21,16 @@ public class Hero {
     https://superheroapi.com/api/access-token/character-id/appearance
      */
 
-
+    /* Hero ids between 1 and 735
+     * Wonderwoman 720
+     * Thor 659
+     * Spiderman 620 - 622
+     * Captain Marvel/ Mar - vell 155 - 158
+     * Wolverine 717*/
 
 
     private static final String API_KEY = HeroToken.findApiToken();
     private static final String BASE_URL = "https://superheroapi.com/api/";
-    //number between 1 and 735
     private static final String CHARACTER_ID = "/480";
     private static final String ENDPOINT_POWERSTATS = "/powerstats";
     private static final String ENDPOINT_BIOGRAPHY = "/biography";
@@ -42,7 +46,7 @@ public class Hero {
     //I then initalize a string, and give it a value of the custome toString of the Powerstats class
     public static String getPowerstats() {
 
-        URL powerStatstUrl = HTTPS.stringToURL(BASE_URL + API_KEY  + "/" + CHARACTER_ID + ENDPOINT_POWERSTATS);
+        URL powerStatstUrl = HTTPS.stringToURL(BASE_URL + API_KEY + "/" + CHARACTER_ID + ENDPOINT_POWERSTATS);
 
         JSONObject object = HTTPS.get(powerStatstUrl);
 
@@ -59,7 +63,7 @@ public class Hero {
     //I then initalize a string, and give it a value of the custom toString of the Biology class
     public static String getBiography() {
 
-        URL biographyUrl = HTTPS.stringToURL(BASE_URL + API_KEY  + "/" + CHARACTER_ID + ENDPOINT_BIOGRAPHY);
+        URL biographyUrl = HTTPS.stringToURL(BASE_URL + API_KEY + "/" + CHARACTER_ID + ENDPOINT_BIOGRAPHY);
 
         JSONObject object = HTTPS.get(biographyUrl);
 

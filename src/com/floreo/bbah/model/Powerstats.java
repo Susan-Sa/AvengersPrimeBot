@@ -131,8 +131,8 @@ public class Powerstats {
 
     }
 
-    public String toString(){
-        return  "Name: " + name +
+    public String toString() {
+        return "Name: " + name +
                 "\nIntelligence: " + intelligence +
                 "\nStrength: " + strength +
                 "\nSpeed: " + speed +

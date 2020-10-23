@@ -9,10 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * A class representing the response from channels.list
  * See https://api.slack.com/methods/channels.list
- *
  */
 
 public class ListChannelsResponse extends Response {

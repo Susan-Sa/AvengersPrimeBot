@@ -22,21 +22,21 @@ public class Biography {
     private String publisher;
     private String alignment;
 
-    public Biography(JSONObject json){
+    public Biography(JSONObject json) {
 
-        if (json.get("response") != null){
+        if (json.get("response") != null) {
             this.response = (String) json.get("response");
         }
-        if (json.get("id") != null){
+        if (json.get("id") != null) {
             this.id = (String) json.get("id");
         }
-        if (json.get("name") != null){
+        if (json.get("name") != null) {
             this.name = (String) json.get("name");
         }
-        if (json.get("full_name") != null){
+        if (json.get("full_name") != null) {
             this.full_name = (String) json.get("full_name");
         }
-        if (json.get("alter_egos") != null){
+        if (json.get("alter_egos") != null) {
             this.alter_egos = (String) json.get("alter_egos");
         }
         if (json.get("aliases") != null) {
@@ -46,16 +46,16 @@ public class Biography {
                 this.aliases.add((String) membersArray.get(i));
             }
         }
-        if (json.get("place_of_birth") != null){
+        if (json.get("place_of_birth") != null) {
             this.place_of_birth = (String) json.get("place_of_birth");
         }
-        if (json.get("first_appearance") != null){
+        if (json.get("first_appearance") != null) {
             this.first_appearance = (String) json.get("first_appearance");
         }
-        if (json.get("publisher") != null){
+        if (json.get("publisher") != null) {
             this.publisher = (String) json.get("publisher");
         }
-        if (json.get("alignment") != null){
+        if (json.get("alignment") != null) {
             this.alignment = (String) json.get("alignment");
         }
     }
@@ -120,4 +120,15 @@ public class Biography {
         this.alignment = alignment;
     }
 
+    public String toString() {
+        return "Full Name: " + full_name +
+                "\nName: " + name +
+                "\nAlter Egos: " + alter_egos +
+                "\nAliases: " + aliases +
+                "\nPlace of Birth: " + place_of_birth +
+                "\nFirst Appearance: " + first_appearance +
+                "\nPublisher: " + publisher +
+                "\nAlignment: " + alignment;
+
+    }
 }

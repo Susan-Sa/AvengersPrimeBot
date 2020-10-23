@@ -7,10 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * A class representing a channel object, which contains information about a team channel.
  * See https://api.slack.com/types/channel
- *
  */
 
 public class Channel {

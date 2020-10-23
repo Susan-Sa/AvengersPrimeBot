@@ -18,11 +18,11 @@ public class PowerstatsResponse extends Response {
 
         super(json);
 
-        response  = new Powerstats(json);
+        response = new Powerstats(json);
 
     }
 
-    public Powerstats sendPowerstats(JSONObject json){
+    public Powerstats sendPowerstats(JSONObject json) {
         return response;
     }
 
